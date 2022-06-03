@@ -1,0 +1,28 @@
+Notification if the book is late
+
+If one or more of the user's books are late, the page should display a constant error message on every page. The message should remind about returning the books and have a link to the return page.
+
+
+A like button for book view
+
+Add a button for individual book view and if it's clicked the book gets one more "like". The likes should be visible in the bookview and also on the page where all books are listed.
+
+
+Page for most liked books
+
+Add a view (page) where the top 10 most popular are listed, based on the amount of likes. The book with the most views should be on the top and the rest in descending order based on likes. By clicking the book you can go to the book's individual view.
+
+
+Sorting for the book listing
+
+Add a functionality to the book listing view where the results can be alphabetically by book name or author's name. Also a sorting option based on the amount of likes.
+
+
+Display certain amount of results in book listing
+
+Add an option for the user to choose how many books are listed in one page (eg. 10/25/50) and the rest should be in their own tabs.
+
+
+Search functionality
+
+Add a search option where books can be searched at least based on book's name or author's name. Designate the thing to be searched with a radio button.

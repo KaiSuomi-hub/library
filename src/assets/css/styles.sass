@@ -1,0 +1,175 @@
+$white: #eeeeee
+$grey: #727277
+$background: #282c34
+$black: #111111
+//how to use a mixin and a variable in sass
+@for $i from 1 through 9
+	li
+		&:nth-child(#{$i})
+			animation-delay: $i * (1s / 18)
+nav
+	li
+		display: inline // we show all elements in one line
+		background-color: $grey
+		margin: 10px 10px 10px 10px
+		padding: 10px 10px 10px 10px
+		border-radius: 10px
+		animation: fade 1s linear
+
+	li:hover //on hover we change colors
+		background-color: grey
+		transition: all .2s linear//make the animation fluid
+	a
+		color: $white
+		text-decoration: none // we remove underline
+
+
+
+
+h1,h4
+	font-size: 2.5rem
+
+body
+	font-size: 16px //default font size
+	font-weight: 300 //default font thickness
+	margin: 0
+	font-family: 'Roboto', sans-serif
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+code
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',monospace
+
+header
+	padding: 10px 0px 10px 0px //10 to top, 0 to right, 10 to down, 0 to left
+	font-weight: 400
+	text-align: center
+// start import from React
+.App
+	text-align: center
+
+.App-header
+	background-color: #282c34
+	min-height: 100vh
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: center
+	color: white
+
+// end import from React
+.inputlabels
+	font-size: 1.5rem //make font 1.5x larger than default
+	margin: 10px 10px 10px 10px //10 to top, 0 to right, 10 to down, 0 to left
+
+.smalltext
+	font-size: 1rem
+	font-weight: thin
+	font-style: italic
+
+.inputData
+	text-align: left
+	display: grid
+	grid-auto-columns: 1fr //align items to a grid column that stacks when narrow view
+	input
+		font-size: 1.5rem
+		border-radius: 10px
+		padding: 3px 0px 3px 10px
+
+.hidden
+	display: none
+	transition: all .2s linear//make the animation fluid
+
+#notvisible
+	display: none
+	transition: all .2s linear//make the animation fluid
+
+.submitReceipt
+	position: absolute //make the hidden div laid over the form
+	background-color: $background
+	width: 500px
+	height: 150px
+	border: 2px solid $white
+	margin: 110px 0 0 50px
+	border-radius: 10px
+	animation: fadeZoom linear 0.1s
+	span //the red X
+		font-size: 2rem
+		padding: 10px 0 0 0
+		color: red
+		font-weight: bold
+		position: absolute
+		left: 92%
+		cursor: pointer
+
+
+#selectAllBooks
+	font-size: 1.5rem
+	margin: 10px 10px 10px 10px
+	border-radius: 10px
+	color: $white
+	background-color: $background
+	border: solid 2px
+	&:hover
+		background-color: grey
+#isbn
+	color: $grey
+	font-weight: bold
+
+
+#bookSaveButton
+	position: relative
+	left: 2vw
+	font-size: 2rem
+	margin: 10% 10px 10px 10px
+	border-radius: 10px
+	color: $white
+	background-color: $background
+	border: solid 2px
+	cursor: pointer
+	&:hover //on hover we change colors
+		background-color: grey
+		transition: all .1s linear//make the animation fluid
+
+#bookEditButton
+	position: relative
+	left: 8vw
+	font-size: 2rem
+	margin: 10% 10px 10px
+	border-radius: 10px
+	color: $white
+	background-color: $background
+	border: solid 2px
+	cursor: pointer
+	&:hover //on hover we change colors
+		background-color: grey
+		transition: all .1s linear//make the animation fluid
+
+// Here is how you implement css keyframes in the Sass syntax with animation name after keyframes
+@keyframes fadeZoom
+	0%
+		opacity: 0
+		transform: scale(0.8)
+	100%
+		opacity: 1
+		transform: scale(1.0)
+
+@keyframes fade
+	0%
+		opacity: 0
+
+	100%
+		opacity: 1
+
+
+// responsive
+@media (max-width: 700px)
+	.inputData
+		input
+			font-size: 1rem
+	#bookEditButton
+		margin: 10% 10px 10px
+	nav
+		li
+			display: grid // we show all elements in one column
+			transition: all .5s linear//make the animation fluid
