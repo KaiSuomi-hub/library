@@ -1,0 +1,76 @@
+Title,Description,Issue ID,URL,State,Author,Author Username,Assignee,Assignee Username,Confidential,Locked,Due Date,Created At (UTC),Updated At (UTC),Closed At (UTC),Milestone,Weight,Labels,Time Estimate,Time Spent
+Install json-server and set default data,"npm install json-server
+
+create the index.js to run your server with, use example from last week to do this. 
+
+add default data to db.json file
+/books
+https://gist.github.com/nanotaboada/6396437
+add id's to default books
+
+The db.json might need other routes and fields as well. It's left up to you to figure out what others are needed.",1,https://buuttilab.com/bctjs/week8-group-project-react/-/issues/1,Open,Ghost User,ghost,"","",No,No,,2021-02-03 13:24:34,2021-02-05 12:59:16,,,,,0,0
+Create view for all the books,"A view to see the title, author and availability status (available, reserved, borrowed) of each book
+If a book is clicked, idea is that it opens the individual book view.",2,https://buuttilab.com/bctjs/week8-group-project-react/-/issues/2,Open,Ghost User,ghost,"","",No,No,,2021-02-03 13:37:12,2021-02-05 12:56:55,,,,,0,0
+Create view for selected book,"The view should always present all the information of the selected book.
+
+If the current application state is set to ""customer"", the view should contain buttons to reserve and borrow (#8 ) this book in the backend.
+
+If the current application state is set to ""admin"", the view should contain buttons to edit any information of this book (description in issue #7 ) or to delete this book from the backend. Also add a ""are you sure"" modal if the delete button is pressed.",3,https://buuttilab.com/bctjs/week8-group-project-react/-/issues/3,Open,Ghost User,ghost,"","",No,No,,2021-02-03 13:37:27,2021-02-05 12:46:20,,,,,0,0
+Create possibility to switch between admin view and customer view,"Create a button that allows the user to switch between customer and admin view mode.
+
+What is included in either view is embedded in other tickets. 
+Make sure there's a way way to check current state anywhere in the application. (use context)",4,https://buuttilab.com/bctjs/week8-group-project-react/-/issues/4,Open,Dan Ackers,feilz,"","",No,No,,2021-02-05 09:34:27,2021-02-05 13:01:14,,,,,0,0
+Create data context to handle all backend requests,"This context should be usable from everywhere in the application when imported.
+
+Don't worry about creating every necessary function inside this context right away during this ticket.
+Other tickets most likely will require you to add functionality and state parameters to this.
+
+Don't let components modify the state of this context directly, but only through functions inside this context.",5,https://buuttilab.com/bctjs/week8-group-project-react/-/issues/5,Open,Dan Ackers,feilz,"","",No,No,,2021-02-05 09:46:57,2021-02-05 09:46:57,,,,,0,0
+Add new book view.,"Create a page with a form to add a new book to the database and library.
+Make sure there are fields to fill in:  
+      **""isbn""**  
+      **""title""**  
+      ""subtitle""   
+      **""author""**   
+      **""published""**   
+      **""publisher""**  
+      **""pages""**  
+      **""description""**  
+      ""website""  
+
+The bolded fields are mandatory for the user to fill in, others are optional.   
+Do frontend validation to make sure that users entered data is of a correct type (number or string), and that the required fields are filled.  
+
+Also create the necessary request to send this POST request to the backend.  
+If the user hasn't filled in the optional fields, they should be sent to the backend as empty strings.  
+
+This view should only be accessible in admin state.",6,https://buuttilab.com/bctjs/week8-group-project-react/-/issues/6,Open,Dan Ackers,feilz,"","",No,No,,2021-02-05 12:20:59,2021-02-05 12:21:37,,,,,0,0
+Edit book view,"This view should be accessible only in admin state.  
+
+Allow every field of the book except **isbn** to be modified, and make a PUT request to the backend with all values.  
+Prefill the form with all currently existing data from the backend (or use already fetched data).",7,https://buuttilab.com/bctjs/week8-group-project-react/-/issues/7,Open,Dan Ackers,feilz,"","",No,No,,2021-02-05 12:25:56,2021-02-05 12:25:56,,,,,0,0
+Borrow/reserve book view,"Create a modal to reserve this book.
+
+This modal should contain the following information:  
+Current status of book (available, reserved or borrowed).  
+
+If it's reserved or borrowed, you should see until what date it's unavailable, and click ""reserve"" to get the next reservation.  
+
+If it's available, you should be able to click Borrow.  
+Default borrow time for this exercise is 3h.
+When borrowing the user should be presented a 4-digit number, which he can then use to return this book later.",8,https://buuttilab.com/bctjs/week8-group-project-react/-/issues/8,Open,Dan Ackers,feilz,"","",No,No,,2021-02-05 12:38:46,2021-02-05 12:46:20,,,,,0,0
+Reservations view,"This view should be accessible in both customer and admin states.
+
+In the admin state, every reservation should be able to be seen, and removed. Also include a ""are you sure"" check 
+in a modal before actually removing it. 
+
+In the ""customer"" state every reservation made should be viewable.
+If the reservation is the ""next"" one in line to be borrowed, you should be able to click ""borrow"", and then handling of that book should be similar to the ""borrow"" view (#8 )  
+This means that if there are multiple reservations on the same book, only the reservation that is ""next in turn"" should be ""borrowable"".",9,https://buuttilab.com/bctjs/week8-group-project-react/-/issues/9,Open,Dan Ackers,feilz,"","",No,No,,2021-02-05 12:40:33,2021-02-05 12:54:02,,,,,0,0
+Return book view,"This view should only be accessible in the ""customer"" state.
+
+The user should return his 4-digit code that he received in the borrow book - view earlier, and it should then be returned.
+Due to how our limited backend works, this can not be implemented in the best way possible, but come up with a way how you can check whether or not the 4digit code is correct, and then the book should be returned. 
+Also have a way to let the user know if his 4 digit code is wrong, and make him try again.
+
+Include a ""go back to listView"" button in the view.",10,https://buuttilab.com/bctjs/week8-group-project-react/-/issues/10,Open,Dan Ackers,feilz,"","",No,No,,2021-02-05 12:45:38,2021-02-05 12:45:38,,,,,0,0
